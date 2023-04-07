@@ -1,6 +1,8 @@
 package clase8;
 
 import clase7.Carrito;
+import clase8.excepciones.CarritoPrecio0Exception;
+import clase8.excepciones.DescuentoNegativoException;
 
 public abstract class Descuento {
     private String tipo;
@@ -13,5 +15,5 @@ public abstract class Descuento {
         return tipo;
     }
 
-    public abstract double calcularDescuento(Carrito carrito);
+    public abstract double calcularDescuento(Carrito carrito) throws DescuentoNegativoException, CarritoPrecio0Exception;
 }
