@@ -1,28 +1,32 @@
 package clase5;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.sql.Array;
 
 public class Carrito {
-   private ArrayList<ItemProducto> items;
+    private int id;
+    private ItemProducto[] itemProductos;
 
-   public Carrito(ArrayList<ItemProducto> items) {
-      this.items = items;
-   }
+    public Carrito() {
+        this.itemProductos = new ItemProducto[3];
+    }
 
-   public void agregarItem(ItemProducto item) {
-      items.add(item);
-   }
+    public ItemProducto[] getItemProductos() {
+        return itemProductos;
+    }
 
-   public void quitarItem(ItemProducto item) {
-      items.remove(item);
-   }
+    public void setItemProductos(ItemProducto[] itemProductos) {
+        this.itemProductos = itemProductos;
+    }
 
-   public double getTotal() {
-      double total = 0;
-      for (ItemProducto item : items) {
-         total += item.getPrecioTotal();
-      }
-      return total;
-   }
+    public int getId() {
+        return id;
+    }
+
+    public double precioTotal(){
+        double precioTotal = 0;
+        for (ItemProducto itemProducto : itemProductos){
+            precioTotal += itemProducto.getCantidad() * itemProducto.getProducto().getPrecio();
+        }
+        return precioTotal;
+    }
 }

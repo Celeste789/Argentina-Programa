@@ -1,15 +1,17 @@
-package clase5;
+package clase7;
+
+import clase5.Producto;
 
 public class ItemProducto {
-    private Producto producto;
+    private clase5.Producto producto;
     private int cantidad;
 
-    public ItemProducto(Producto producto, int cantidad) {
+    public ItemProducto(clase5.Producto producto, int cantidad) {
         this.producto = producto;
         this.cantidad = cantidad;
     }
 
-    public Producto getProducto() {
+    public clase5.Producto getProducto() {
         return producto;
     }
 
